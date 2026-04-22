@@ -1,0 +1,52 @@
+{
+  "schoolName": "Modern Public School",
+  "location": "Pune",
+  "establishedYear": 1995,
+  "classes": [
+    {
+      "classId": "10-A",
+      "roomNumber": 201,
+      "classTeacher": "Mr. Suresh Patil",
+      "subjects": [
+        {
+          "subjectName": "Mathematics",
+          "teacher": "Mrs. Anita Deshmukh"
+        },
+        {
+          "subjectName": "Science",
+          "teacher": "Mr. Vikas Kulkarni"
+        }
+      ],
+      "students": [
+        {
+          "rollNo": 1,
+          "name": "Aditya Rao",
+          "age": 15,
+          "gender": "Male",
+          "performance": "Excellent"
+        },
+        {
+          "rollNo": 2,
+          "name": "Sneha More",
+          "age": 16,
+          "gender": "Female",
+          "performance": "Good"
+        }
+      ]
+    },
+    {
+      "classId": "10-B",
+      "roomNumber": 202,
+      "classTeacher": "Ms. Pooja Hegde",
+      "students": [
+        {
+          "rollNo": 1,
+          "name": "Rohan Das",
+          "age": 15,
+          "gender": "Male",
+          "performance": "Average"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "postId": "POST_5542190",
+  "user": {
+    "userId": "u_987",
+    "username": "coder_pune",
+    "isVerified": true
+  },
+  "content": "Just finished my first JavaScript project for MCA Semester II! #MCA #WebTech #CodingLife",
+  "timestamp": "2026-04-21T10:30:00Z",
+  "likes": 1240,
+  "comments": [
+    {
+      "commentId": "c_001",
+      "user": "tech_geek",
+      "text": "Great work! Keep it up.",
+      "likes": 12
+    },
+    {
+      "commentId": "c_002",
+      "user": "student_helper",
+      "text": "Can you share the source code?",
+      "likes": 5
+    },
+    {
+      "commentId": "c_003",
+      "user": "prof_admin",
+      "text": "Well documented code structure.",
+      "likes": 20
+    }
+  ],
+  "shareCount": 45
+}

@@ -1,0 +1,32 @@
+{
+  "cartId": "CRT-2026-9901",
+  "customerName": "John Doe",
+  "items": [
+    {
+      "productId": 101,
+      "productName": "Wireless Mouse",
+      "category": "Electronics",
+      "quantity": 1,
+      "pricePerUnit": 25.50,
+      "currency": "USD"
+    },
+    {
+      "productId": 205,
+      "productName": "Mechanical Keyboard",
+      "category": "Electronics",
+      "quantity": 2,
+      "pricePerUnit": 45.00,
+      "currency": "USD"
+    },
+    {
+      "productId": 310,
+      "productName": "USB-C Hub",
+      "category": "Accessories",
+      "quantity": 1,
+      "pricePerUnit": 15.75,
+      "currency": "USD"
+    }
+  ],
+  "totalAmount": 131.25,
+  "paymentStatus": "Pending"
+}

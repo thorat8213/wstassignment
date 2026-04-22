@@ -1,0 +1,54 @@
+{
+  "airlineName": "SkyHigh Airways",
+  "airlineCode": "SH",
+  "flights": [
+    {
+      "flightNumber": "SH-402",
+      "origin": "Pune (PNQ)",
+      "destination": "Delhi (DEL)",
+      "departureTime": "2026-04-25T10:30:00",
+      "status": "On Time",
+      "passengers": [
+        {
+          "passengerId": "P8821",
+          "name": "Rahul Sharma",
+          "seatNumber": "12A",
+          "ticket": {
+            "ticketNumber": "TKT990211",
+            "class": "Economy",
+            "fare": 4500.00
+          },
+          "baggage": [
+            {
+              "type": "Check-in",
+              "weight": "15kg",
+              "tagNumber": "BAG-001"
+            },
+            {
+              "type": "Cabin",
+              "weight": "7kg",
+              "tagNumber": "BAG-002"
+            }
+          ]
+        },
+        {
+          "passengerId": "P8822",
+          "name": "Priya Verma",
+          "seatNumber": "02C",
+          "ticket": {
+            "ticketNumber": "TKT990212",
+            "class": "Business",
+            "fare": 12000.00
+          },
+          "baggage": [
+            {
+              "type": "Check-in",
+              "weight": "25kg",
+              "tagNumber": "BAG-003"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

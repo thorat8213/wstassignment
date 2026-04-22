@@ -1,0 +1,43 @@
+{
+  "tournamentName": "Inter-College Tech Cup 2026",
+  "sport": "Cricket",
+  "organizer": "IMED Pune",
+  "teams": [
+    {
+      "teamId": "T1",
+      "teamName": "Cyber Knights",
+      "captain": "Amit Sharma",
+      "points": 6
+    },
+    {
+      "teamId": "T2",
+      "teamName": "Data Warriors",
+      "captain": "Sumeet Patil",
+      "points": 3
+    }
+  ],
+  "matches": [
+    {
+      "matchId": "M_101",
+      "date": "2026-04-15",
+      "venue": "IMED Ground",
+      "teamA": "Cyber Knights",
+      "teamB": "Data Warriors",
+      "score": {
+        "teamA_score": "152/4",
+        "teamB_score": "148/8"
+      },
+      "winner": "Cyber Knights",
+      "manOfTheMatch": "Amit Sharma"
+    },
+    {
+      "matchId": "M_102",
+      "date": "2026-04-18",
+      "venue": "IMED Ground",
+      "teamA": "Code Masters",
+      "teamB": "Cyber Knights",
+      "status": "Upcoming"
+    }
+  ],
+  "totalMatchesPlayed": 5
+}

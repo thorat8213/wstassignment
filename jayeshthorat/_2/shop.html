@@ -1,0 +1,189 @@
+<!-- Design a Home page of online Shopping web site that contains 
+different products with images. Create image of the products
+ as hyperlinks to display the Description of products. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Site | Assignment 2</title>
+    <style>
+        /* --- CSS STYLING --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+
+        header {
+            background-color: #131921;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Home Page Grid */
+        #home-page {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .product-card h3 {
+            color: #333;
+            margin: 15px 0 5px;
+        }
+
+        .price {
+            color: #B12704;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Description Page View */
+        #description-page {
+            display: none; /* Hidden by default */
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .desc-flex {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .desc-image img {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .desc-text {
+            flex: 1;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #febd69;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MegaMart Online</h1>
+    <p>Click on any product image to see full details</p>
+</header>
+
+<div class="container">
+    
+    <div id="home-page">
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_SL1500_.jpg" 
+                 onclick="showDescription('Laptop Pro', '$1200', 'High performance laptop with 16GB RAM and 512GB SSD.', this.src)" 
+                 alt="Laptop">
+            <h3>Laptop Pro</h3>
+            <p class="price">$1,200</p>
+        </div>
+
+        <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=300&h=300&auto=format&fit=crop" 
+         onclick="showDescription('Smartphone Z', '$800', 'Latest 5G smartphone with Amoled Display and 108MP Camera.', this.src)" 
+         alt="Phone">
+    <h3>Smartphone Z</h3>
+    <p class="price">$800</p>
+</div>
+
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61ZjlBOp+rL._AC_SL1500_.jpg" 
+                 onclick="showDescription('Smart Watch', '$250', 'Waterproof smart watch with heart rate and sleep tracking.', this.src)" 
+                 alt="Watch">
+            <h3>Smart Watch</h3>
+            <p class="price">$250</p>
+        </div>
+    </div>
+
+    <div id="description-page">
+        <button class="back-btn" onclick="showHome()">← Back to Products</button>
+        <div class="desc-flex">
+            <div class="desc-image">
+                <img id="desc-img" src="" alt="Product Large">
+            </div>
+            <div class="desc-text">
+                <h2 id="desc-title"></h2>
+                <h3 id="desc-price" class="price"></h3>
+                <hr>
+                <h4>Product Highlights:</h4>
+                <p id="desc-info"></p>
+                <button style="padding: 15px 30px; background: #ffa41c; border: none; border-radius: 20px; cursor: pointer;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    /* --- JAVASCRIPT LOGIC --- */
+    
+    function showDescription(title, price, info, imgSrc) {
+        // Hide Home, Show Description
+        document.getElementById('home-page').style.display = 'none';
+        document.getElementById('description-page').style.display = 'block';
+
+        // Update Description Content
+        document.getElementById('desc-title').innerText = title;
+        document.getElementById('desc-price').innerText = price;
+        document.getElementById('desc-info').innerText = info;
+        document.getElementById('desc-img').src = imgSrc;
+
+        // Scroll to top
+        window.scrollTo(0, 0);
+    }
+
+    function showHome() {
+        // Hide Description, Show Home
+        document.getElementById('description-page').style.display = 'none';
+        document.getElementById('home-page').style.display = 'grid';
+    }
+</script>
+
+</body>
+</html>

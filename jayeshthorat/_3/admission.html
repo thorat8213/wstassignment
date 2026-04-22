@@ -1,0 +1,187 @@
+<!-- Design patient admission form for Hospital having fields like patient ID,
+ patient name, address, city, Adhar ID, contact no., email id, blood group, 
+ date of birth(calendar), age(to be derived) etc. Also Validate the form using Javascript. -->
+
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Admission Form | Assignment 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[readonly] {
+            background-color: #eee;
+        }
+        .btn-submit {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn-submit:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Patient Admission Form</h2>
+    <form name="hospitalForm" onsubmit="return validateForm()">
+        
+        <div class="form-group">
+            <label>Patient ID</label>
+            <input type="text" name="pid" placeholder="e.g. P101">
+        </div>
+
+        <div class="form-group">
+            <label>Patient Name</label>
+            <input type="text" name="pname">
+        </div>
+
+        <div class="form-group">
+            <label>Adhar ID (12 Digits)</label>
+            <input type="text" name="adhar">
+        </div>
+
+        <div class="form-group">
+            <label>Contact No.</label>
+            <input type="text" name="contact">
+        </div>
+
+        <div class="form-group">
+            <label>Email ID</label>
+            <input type="text" name="email">
+        </div>
+
+        <div style="display: flex; gap: 10px;">
+            <div class="form-group" style="flex: 1;">
+                <label>Blood Group</label>
+                <select name="bg">
+                    <option value="">--Select--</option>
+                    <option>A+</option><option>A-</option>
+                    <option>B+</option><option>B-</option>
+                    <option>O+</option><option>O-</option>
+                    <option>AB+</option><option>AB-</option>
+                </select>
+            </div>
+            <div class="form-group" style="flex: 1;">
+                <label>Date of Birth</label>
+                <input type="date" name="dob" id="dob" onchange="calculateAge()">
+            </div>
+            <div class="form-group" style="flex: 1;">
+                <label>Age (Derived)</label>
+                <input type="text" name="age" id="age" readonly>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Address</label>
+            <textarea name="address" rows="2"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" name="city">
+        </div>
+
+        <button type="submit" class="btn-submit">Register Patient</button>
+    </form>
+</div>
+
+<script>
+    // Function to calculate age from DOB
+    function calculateAge() {
+        var dobValue = document.getElementById('dob').value;
+        if (!dobValue) return;
+
+        var dob = new Date(dobValue);
+        var today = new Date();
+        var age = today.getFullYear() - dob.getFullYear();
+        var m = today.getMonth() - dob.getMonth();
+        
+        if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+            age--;
+        }
+        document.getElementById('age').value = age;
+    }
+
+    // Validation Logic
+    function validateForm() {
+        var f = document.forms["hospitalForm"];
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var adharPattern = /^\d{12}$/;
+        var mobilePattern = /^\d{10}$/;
+
+        if (f["pid"].value == "" || f["pname"].value == "") {
+            alert("Patient ID and Name are required.");
+            return false;
+        }
+        if (!adharPattern.test(f["adhar"].value)) {
+            alert("Please enter a valid 12-digit Adhar ID.");
+            return false;
+        }
+        if (!mobilePattern.test(f["contact"].value)) {
+            alert("Contact number must be 10 digits.");
+            return false;
+        }
+        if (!emailPattern.test(f["email"].value)) {
+            alert("Invalid Email format.");
+            return false;
+        }
+        if (f["bg"].value == "") {
+            alert("Please select a Blood Group.");
+            return false;
+        }
+        if (f["age"].value == "" || f["age"].value < 0) {
+            alert("Please select a valid Date of Birth.");
+            return false;
+        }
+
+        alert("Patient Admission Successful!");
+        return true;
+    }
+</script>
+
+</body>
+</html>

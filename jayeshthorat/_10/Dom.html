@@ -1,0 +1,74 @@
+
+<!-- Write a JavaScript to change background color of the web page when button is clicked. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer | Assignment 10</title>
+    <style>
+        /* Basic styling to center the button */
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.5s ease; /* Smooth color transition */
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            transition: transform 0.1s;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Background Color Changer</h2>
+        <p>Click the button below to change the theme!</p>
+        <button onclick="changeBackground()">Change Color</button>
+    </div>
+
+    <script>
+        function changeBackground() {
+            // Array of different colors
+            const colors = ["#ffadad", "#ffd6a5", "#fdffb6", "#caffbf", "#9bf6ff", "#a0c4ff", "#bdb2ff", "#ffc6ff"];
+            
+            // Pick a random index from the array
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            
+            // Select the random color
+            const selectedColor = colors[randomIndex];
+            
+            // Apply the color to the body's style
+            document.body.style.backgroundColor = selectedColor;
+        }
+    </script>
+
+</body>
+</html>
